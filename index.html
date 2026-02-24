@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Color Lab</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-theme="light">
+  <header class="topbar">
+    <a class="btn" href="/" title="ドメインルートへ戻る">← 戻る</a>
+
+    <div class="brand">
+      <div class="brand__name">Local Color Lab</div>
+    </div>
+
+    <div class="topbar__right">
+      <div class="seg">
+        <button class="seg__btn" data-theme-btn="light" title="ライト">Light</button>
+        <button class="seg__btn" data-theme-btn="gray" title="グレー">Gray</button>
+        <button class="seg__btn" data-theme-btn="dark" title="ダーク">Dark</button>
+        <button class="seg__btn" data-theme-btn="custom" title="現在の色からテーマ生成">Custom</button>
+      </div>
+      <button class="btn" id="randomBtn">ランダム</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Left -->
+    <aside class="side side--left">
+      <div class="side__header">
+        <div class="side__title">セット</div>
+      </div>
+
+      <div class="side__tools">
+       <div class="row row--setSearch">
+          <input class="search search--full" id="setSearch" placeholder="セット検索 (例: vivid / #ui / title:sunset / tag:pastel)" />
+          <button class="btn btn--sm" id="setSearchBtn" title="検索を実行">検索</button>
+        </div>
+       <div class="row row--setQuickTags">
+         <button class="btn btn--sm" id="setShuffleBtn" title="表示をシャッフル">ガチャ</button>
+         <button class="btn btn--sm" data-set-tag="vivid" title="vivid タグで絞り込み">#vivid</button>
+         <button class="btn btn--sm" data-set-tag="ui" title="ui タグで絞り込み">#ui</button>
+       </div>
+      </div>
+
+
+      <div class="side__scroll">
+        <div class="autoScroll" id="autoScroll">
+          <div class="autoScroll__track" id="autoScrollTrack"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center -->
+    <section class="center">
+      <section class="card card--compact">
+        <div class="card__title card__titleRow">
+          <span>色選択 / 変換</span>
+          <div class="row">
+            <button class="btn" id="favAddBtn">★ 保存</button>
+          </div>
+        </div>
+
+        <div class="pickerRowCompact">
+          <div class="swatchCol">
+            <div class="swatch" id="swatch"></div>
+
+            <div class="swatchMeta">
+              <div class="label">補色</div>
+              <div class="complementRow">
+                <div class="miniSwatch" id="compSwatch"></div>
+                <div class="mono" id="compHex">#000000</div>
+                <button class="btn btn--tiny" id="copyCompBtn">Copy</button>
+                <button class="btn btn--tiny" id="useCompBtn">Use</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rightCol">
+            <div class="controlRow">
+              <input type="color" id="picker" value="#4f46e5" />
+              <input type="text" id="hexInput" value="#4F46E5" spellcheck="false" />
+              <button class="btn" id="applyBtn">HEX適用</button>
+            </div>
+
+            <div class="outputsSlim" id="outputsSlim"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card card--compact">
+        <div class="card__title card__titleRow">
+          <span>組み合わせ</span>
+          <div class="row">
+            <select class="search search--slot" id="comboInsertIndex" title="番号指定で追加">
+              <option value="">番号</option>
+            </select>
+            <button class="btn" id="comboInsertBtn">位置に追加</button>
+            <button class="btn" id="comboAddBtn">＋ 追加</button>
+            <button class="btn" id="comboClearBtn">クリア</button>
+          </div>
+        </div>
+
+        <div class="combo">
+          <div class="combo__preview">
+            <div class="comboStrip" id="comboStrip"></div>
+            <div class="comboGradient" id="comboGradient"></div>
+          </div>
+
+          <div class="combo__items" id="comboItems"></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Right -->
+    <aside class="side side--right">
+      <div class="side__header side__header--tabs">
+        <div class="tabs">
+          <button class="tab active" data-tab="favorites">ローカル保存</button>
+          <button class="tab" data-tab="presets">プリセット</button>
+          <button class="tab" data-tab="customSaves">詳細保存</button>
+        </div>
+      </div>
+
+      <div class="side__scroll">
+        <!-- Favorites -->
+        <section class="tabPanel" data-tab-panel="favorites">
+
+		<div class="side__tools sideToolsSlim">
+		  <div class="toolRow">
+		    <button class="btn btn--sm" id="saveComboBtn">セット保存</button>
+		    <button class="btn btn--sm" id="copyComboCodeBtn">Copy</button>
+		  </div>
+
+		  <div class="toolRow toolRow--import">
+		    <input class="search search--full input--sm" id="importSetInput" placeholder="セットコード (#xxxxxx,#xxxxxx,… 最大8)" />
+		    <button class="btn btn--sm" id="importSetBtn">読込</button>
+		  </div>
+		</div>
+
+
+          <div class="favorites" id="favorites"></div>
+
+          <div class="side__footer">
+            <button class="btn" id="favClearBtn">全消し</button>
+          </div>
+        </section>
+
+        <!-- Presets -->
+        <section class="tabPanel hidden" data-tab-panel="presets">
+          <div class="side__tools">
+            <input class="search search--full" id="presetSearch" placeholder="検索 (blue slate #ff)" />
+            <div class="row">
+              <button class="btn" id="presetFillBtn">セット作成</button>
+            </div>
+          </div>
+          <div class="presetGrid presetGrid--side" id="presetGrid"></div>
+        </section>
+
+        <section class="tabPanel hidden" data-tab-panel="customSaves">
+          <div class="side__tools sideToolsSlim">
+            <div class="toolRow toolRow--customForm">
+              <input class="search search--full input--sm" id="customSaveInput" placeholder="例: #112233,#445566,xxxxxxxx (最大8)" />
+              <button class="btn btn--sm" id="customSaveAddBtn">追加</button>
+            </div>
+            <div class="toolRow toolRow--customForm">
+              <input class="search search--full input--sm" id="customSaveNoteInput" placeholder="説明テキスト（任意）" maxlength="200" />
+            </div>
+            <div class="hintText">`xxxxxxxx` は現在セットの同じ番号を参照（なければテーマ既定値）。説明はローカル保存のホバー時に表示。</div>
+          </div>
+          <div class="customSaves" id="customSaves"></div>
+        </section>
+      </div>
+    </aside>
+  </main>
+  <footer class="siteFooter" aria-label="footer">
+    <div class="siteFooter__inner">
+    © 2026 YashubuStudio ·
+      <a href="https://ykvario.com" target="_blank" rel="noopener noreferrer">
+      https://ykvario.com
+      </a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Copied</div>
+  <script src="./app.js"></script>
+</body>
+</html>

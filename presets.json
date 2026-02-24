@@ -1,0 +1,37 @@
+[
+  ["Ink", "#0B1220"], ["Midnight", "#0B0F17"], ["Slate 950", "#020617"], ["Slate 900", "#0F172A"],
+  ["Slate 800", "#1E293B"], ["Slate 700", "#334155"], ["Slate 600", "#475569"], ["Slate 500", "#64748B"],
+  ["Slate 400", "#94A3B8"], ["Slate 300", "#CBD5E1"], ["Slate 200", "#E2E8F0"], ["Slate 100", "#F1F5F9"],
+  ["Stone 900", "#1C1917"], ["Stone 700", "#44403C"], ["Stone 500", "#78716C"], ["Stone 300", "#D6D3D1"],
+  ["Gray 900", "#111827"], ["Gray 700", "#374151"], ["Gray 500", "#6B7280"], ["Gray 300", "#D1D5DB"],
+  ["Paper", "#F3F4F6"], ["White", "#FFFFFF"],
+
+  ["Indigo 700", "#4338CA"], ["Indigo 600", "#4F46E5"], ["Indigo 500", "#6366F1"], ["Indigo 400", "#818CF8"],
+  ["Blue 700", "#1D4ED8"], ["Blue 600", "#2563EB"], ["Blue 500", "#3B82F6"], ["Blue 400", "#60A5FA"],
+  ["Sky 700", "#0369A1"], ["Sky 600", "#0284C7"], ["Sky 500", "#0EA5E9"], ["Sky 400", "#38BDF8"],
+  ["Cyan 700", "#0E7490"], ["Cyan 600", "#0891B2"], ["Cyan 500", "#06B6D4"], ["Cyan 400", "#22D3EE"],
+
+  ["Teal 700", "#0F766E"], ["Teal 600", "#0D9488"], ["Teal 500", "#14B8A6"], ["Teal 400", "#2DD4BF"],
+  ["Emerald 700", "#047857"], ["Emerald 600", "#059669"], ["Emerald 500", "#10B981"], ["Emerald 400", "#34D399"],
+  ["Green 700", "#15803D"], ["Green 600", "#16A34A"], ["Green 500", "#22C55E"], ["Green 400", "#4ADE80"],
+  ["Lime 700", "#4D7C0F"], ["Lime 600", "#65A30D"], ["Lime 500", "#84CC16"], ["Lime 400", "#A3E635"],
+
+  ["Yellow 700", "#A16207"], ["Yellow 600", "#CA8A04"], ["Yellow 500", "#EAB308"], ["Yellow 400", "#FACC15"],
+  ["Amber 700", "#B45309"], ["Amber 600", "#D97706"], ["Amber 500", "#F59E0B"], ["Amber 400", "#FBBF24"],
+  ["Orange 700", "#C2410C"], ["Orange 600", "#EA580C"], ["Orange 500", "#F97316"], ["Orange 400", "#FB923C"],
+
+  ["Red 700", "#B91C1C"], ["Red 600", "#DC2626"], ["Red 500", "#EF4444"], ["Red 400", "#F87171"],
+  ["Rose 700", "#BE123C"], ["Rose 600", "#E11D48"], ["Rose 500", "#F43F5E"], ["Rose 400", "#FB7185"],
+  ["Pink 700", "#BE185D"], ["Pink 600", "#DB2777"], ["Pink 500", "#EC4899"], ["Pink 400", "#F472B6"],
+
+  ["Violet 700", "#6D28D9"], ["Violet 600", "#7C3AED"], ["Violet 500", "#8B5CF6"], ["Violet 400", "#A78BFA"],
+  ["Purple 700", "#7E22CE"], ["Purple 600", "#9333EA"], ["Purple 500", "#A855F7"], ["Purple 400", "#C084FC"],
+
+  ["Success", "#22C55E"], ["Warning", "#F59E0B"], ["Danger", "#EF4444"], ["Info", "#0EA5E9"],
+  ["Link", "#2563EB"], ["Accent", "#4F46E5"], ["Highlight", "#FACC15"],
+
+  ["Ocean", "#0EA5E9"], ["Deep Ocean", "#075985"], ["Forest", "#166534"], ["Mint", "#34D399"],
+  ["Sand", "#EAB308"], ["Terracotta", "#C2410C"], ["Berry", "#9F1239"], ["Grape", "#5B21B6"],
+  ["Lavender", "#BFA5FF"], ["Peach", "#FDBA74"], ["Ivory", "#FFF7ED"], ["Charcoal", "#111827"]
+]
+
